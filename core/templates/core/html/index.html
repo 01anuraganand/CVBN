@@ -1,0 +1,33 @@
+{% extends 'core/html/base.html' %}
+{% load static %}
+{% block title %} Home : Emotion & Avatar!{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+      <img src="/static/icons/logo.png" class="img-fluid" width="20%"/>
+  </div>
+</div>
+
+<div class="container small-center">
+  <div class="row mx-auto border border-success">
+      <div class="col-md-6 d-flex align-items-center">
+          <p class="mx-auto"> <span class="h6"> Welcome to </span><br><br/><span class="h1"> Dr. CNN </span> <br>
+          <span class="mb-4 h5">Your X-Ray Healthcare Solution</span> <br/><br/>
+          
+          <a class="btn btn-success btn-lg mr-2 mt-2" href="{% url 'detect_disease' %}">User Login</a>
+          <a class="btn btn-success btn-lg mt-2" href="signup">User Registration</a>
+          <br/><br/><br/>
+          <span class="mt-4 mb-1 h5">Designed and Developed By:</span><br/>
+          <span class="mb-0 h6">Sushant Kumar | Pabitra kr. Panda</span><br/>
+          <br>
+          <span class="mt-4 mb-1 h5">Project Author:</span><br/>
+          <span class="mb-0 h6">Sushant Kumar | Pabitra kr. Panda</span><br/>
+          <span class="h6">Anurag Anand | Vikiram Sharma</p>
+      </div>
+      <div class="col-md-6">
+          <img src="/static/images/researchers.png" alt="doctors" class="img-fluid">
+      </div>
+  </div>
+</div>
+{% endblock %}

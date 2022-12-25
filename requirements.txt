@@ -1,0 +1,6 @@
+virtualenv
+django
+pillow
+numpy
+pandas
+tensorflow
