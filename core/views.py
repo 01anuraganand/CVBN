@@ -8,6 +8,9 @@ from tensorflow.keras.preprocessing import image
 def index(request):
     return render(request, 'core/html/index.html')
 
+def error(request):
+    return render(request, 'core/html/error.html')
+
 def upload_photo(request):
     to_delete = Image.objects.all()
     to_delete.delete()
