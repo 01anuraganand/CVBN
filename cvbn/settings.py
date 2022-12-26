@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zgq5gbo33#g!#4b)ty%9ou#a+f&-c3)*&7s1=)av4cq=3$d-*h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://cvbn.azurewebsites.net/','127.0.0.1']
 
 
 # Application definition
@@ -118,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [BASE_DIR,"static"]
+#STATICFILES_DIRS = [BASE_DIR,"static"]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
