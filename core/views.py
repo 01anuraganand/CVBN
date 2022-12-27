@@ -4,6 +4,7 @@ from . forms import ImageForm
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
+from django.http import HttpResponseRedirect
 # Create your views here.
 def index(request):
     return render(request, 'core/html/index.html')
@@ -38,7 +39,7 @@ def covid_model(request, filename):
     for value in classname_mapping:
         if int(value) == ans:
             result = classname_mapping[value]
-    return result
+    return np.max(pred)*100, result
 
 def render_upload_photo(request):
     form = img = max_pred = pred = model = emoji_path =  None
@@ -47,13 +48,14 @@ def render_upload_photo(request):
     return render(request, 'core/html/upload_img.html', {'form' : form, 'img' : img,'pred': pred, 'max_pred': max_pred , 'model': model, 'emoji_path' : emoji_path})
 
 def render_upload_photo_classify(request):
-    form = img = result = model =  None
+    form = img = result = model =predv =   None
     form, img  = upload_photo(request)
     img_path = [str(x.photo.url) for x in img]
 
     if(len(img_path)>0):
         try:
-            result = covid_model(request, img_path[0][1:])
+            predv, result = covid_model(request, img_path[0][1:])
         except:
+            #return HttpResponseRedirect('core/html/error.html')
             print('-------getting errror ------')
-    return render(request, 'core/html/upload_img.html', {'form' : form, 'img' : img,'pred': result, 'model': model})
+    return render(request, 'core/html/upload_img.html', {'form' : form, 'img' : img,'pred': result, 'predv': predv, 'model': model})
