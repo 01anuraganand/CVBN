@@ -1,11 +1,13 @@
-{% extends 'core/html/base.html' %} {% load static %} {% block title%}Detect
-Disease{% endblock %} {% block content %}
+{% extends 'core/html/base.html' %} 
+{% load static %} 
+{% block title%}Detect Disease{% endblock %} 
+{% block content %}
 
 <div class="container-fluid">
   <div class="row bg-color">
     <div class="col-md-12 bg-success w-100" style="min-height: 2px"></div>
     <img
-      src="/static/images/network_half.png"
+      src="core/templates/core/images/network_half.png"
       alt="bg"
       class="bg-style img-fluid text-center"
       width="100%"
@@ -20,7 +22,7 @@ Disease{% endblock %} {% block content %}
             <br />
             Choose {{form}}
             <img
-              src="/static/icons/camera-solid.svg"
+              src="core/templates/core/icons/camera-solid.svg"
               class="image-fluid"
               width="10%"
             />
