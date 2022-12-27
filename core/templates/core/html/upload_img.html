@@ -41,6 +41,7 @@
           </select>
         </div>
         <input type="submit" class="btn btn-success my-2 col-2" value="Check" />
+      <a class="btn btn-outline-dark col-2">Home</a>
       </form>
     </div>
   </div>
@@ -48,36 +49,49 @@
 {% if pred %}
 <div class="container-fluid col-lg-8 my-4">
   <div class="row text-center">
-    <p class="h2 w-100 mx-auto text-success">Test Result</p>
+    {% comment %} <p class="h2 w-100 mx-auto text-success">Test Result</p> {% endcomment %}
     <br />
     {% for x in img %}
     <div class="col-sm-4 ml-auto">
       <div class="m-2">
-        <p class="display-5 text-center">Uploaded Image</p>
+        <p class="display-5 text-center h6">Uploaded Image</p>
         <img
           src="{{x.photo.url}}"
           class="img-fluid"
-          width="200px"
+          width="250px"
           alt="Responsive image"
         />
       </div>
     </div>
     {% endfor %}
-    <div class="mr-auto mt-4">
+    <div class="mr-auto mt-4 text-left">
+      {% if pred == "Normal"%}
+      <p class="text-success font-weight-bold h5">Result: {{pred}}</p>
+      <p class="h6">No traces of covid or any pheumonia Infection found in the image </p>
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: {{predv}}%" aria-valuemin="0" aria-valuemax="100">
+          {{predv}}%
+        </div>
+      </div>
+      {% else %}
       <p class="text-danger h5">Result: {{pred}}</p>
+      <p class="h6">Follow the emergency guidlines and contact you doctor as soon as possible</p>
+      <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: {{predv}}%" aria-valuemin="0" aria-valuemax="100">
+          {{predv}}%
+        </div>
+      </div>
+      {% endif %}
       <br />
-
       <a
         href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019?adgroupsurvey={adgroupsurvey}&gclid=CjwKCAiAhqCdBhB0EiwAH8M_Grzr7-t_KrJ-Wym6HWxCV2rP-9QBrgBJzXxLbFm8MQ6vmFm42zcZcRoCIi8QAvD_BwE"
         class="btn btn-outline-danger mb-2"
-        >Emergency Guidance</a
+        >Emergency Guidance For Covid</a
       >
-      {{predv}}
     </div>
   </div>
 </div>
 {% endif %}
-{% endblock %}
 <script>
   let input = document.getElementById("file");
   let imageName = document.getElementById("imageName");
@@ -88,5 +102,6 @@
     imageName.innerText = inputImage.name;
   });
 </script>
+{% endblock %}
 
 
