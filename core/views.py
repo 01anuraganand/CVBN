@@ -4,6 +4,7 @@ from . forms import ImageForm
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
+from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponseRedirect
 # Create your views here.
 def index(request):
@@ -47,6 +48,8 @@ def render_upload_photo(request):
     img_path = [str(x.photo.url) for x in img] 
     return render(request, 'core/html/upload_img.html', {'form' : form, 'img' : img,'pred': pred, 'max_pred': max_pred , 'model': model, 'emoji_path' : emoji_path})
 
+
+@csrf_protect
 def render_upload_photo_classify(request):
     form = img = result = model =predv =   None
     form, img  = upload_photo(request)
