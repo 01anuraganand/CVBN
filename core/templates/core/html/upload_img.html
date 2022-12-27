@@ -20,7 +20,7 @@
         <div class="text-center">
           <label for="file" id="fileLable">
             <br />
-            Choose {{form}}
+            <span class="h6">Choose {{form}}</span> <br/>
             <img
               src="{% static 'icons/camera-solid.svg' %}"
               class="image-fluid"
@@ -31,7 +31,7 @@
             <span id="imageName"></span>
           </label>
         </div>
-        <div class="form-group row">
+        {% comment %} <div class="form-group row">
           <label for="model" class="col-sm-2 col-form-label"
             >Choose Model:
           </label>
@@ -39,9 +39,9 @@
             <option value="DenseNet201">DenseNet201</option>
             <option value="ResNet50">ResNet50</option>
           </select>
-        </div>
+        </div> {% endcomment %}
         <input type="submit" class="btn btn-success my-2 col-2" value="Check" />
-      <a class="btn btn-outline-dark col-2">Home</a>
+      <a class="btn btn-outline-dark col-2" href="{% url 'index' %}">Home</a>
       </form>
     </div>
   </div>
@@ -99,7 +99,7 @@
   input.addEventListener("change", () => {
     let inputImage = document.querySelector("input[type=file]").files[0];
 
-    imageName.innerText = inputImage.name;
+    imageName.innerText = "Selected Image: "+inputImage.name;
   });
 </script>
 {% endblock %}

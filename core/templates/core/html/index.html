@@ -9,8 +9,9 @@
           <p class="mx-auto"> <span class="h6"> Welcome to </span><br><br/><span class="h1"> Dr. CNN </span> <br>
           <span class="mb-4 h5">Your Personal Healthcare Solution</span> <br/>
           Upload your check X-ray to classify between <br> Covid | Bacterial Pneumonia | Viral Pneumonia | Normal <br>
-          <span class="h6">Know more about the architecture from <a class="text-dark" href="https://tensorboard.dev/experiment/UVaoC7SXTOCLHrwXUyM61g/#scalars" target="_blank"><u>here</u></a></span><br>
+          {% comment %} <span class="h6">Know more about the architecture from <a class="text-dark" href="architecture/"><u>here</u></a></span><br> {% endcomment %}
           <a class="btn btn-success btn-lg mr-2 mt-4" href="{% url 'detect_disease' %}">Check Now</a>
+          <a class="btn btn-outline-success btn-lg mr-2 mt-4" href="architecture/">Understand Architecture</a>
           <br/><br/>
           <span class="mt-3 mb-1 h5">Designed and Developed By:</span><br/>
           <span class="mb-0 h6">Sushant Kumar | Pabitra kr. Panda</span><br/>
@@ -21,7 +22,6 @@
       </div>
       <div class="col-md-6">
           <img src="{% static 'images/researchers.png' %}" alt="doctors" class="img-fluid">
-          {% comment %} <iframe src="https://tensorboard.dev/experiment/UVaoC7SXTOCLHrwXUyM61g/#scalars" class="border border-success" title="Iframe Example" height="200px" width="100%"></iframe> {% endcomment %}
         </div>
   </div>
 </div>

@@ -13,6 +13,9 @@ def index(request):
 def error(request):
     return render(request, 'core/html/error.html')
 
+def architecture(request):
+    return render(request, 'core/html/architecture.html')
+
 def upload_photo(request):
     to_delete = Image.objects.all()
     to_delete.delete()
