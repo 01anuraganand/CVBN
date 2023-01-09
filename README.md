@@ -5,7 +5,7 @@ This project is part of well organized research at Lovely Professional Universit
 Anurag Anand (01anuraganand)<br/>
 Sushant Kumar (000Sushant)<br/>
 Vikram Sharma(vikramsh2002)<br/>
-Pabitra Kumar Panda<br/>
+Pabitra Kumar Panda (pabitra-kumar-panda)<br/>
 
 ##### Access 🚀 https://cvbn.azurewebsites.net/ 🚀
 
